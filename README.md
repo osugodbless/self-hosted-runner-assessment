@@ -9,19 +9,26 @@ This kind of runner that you manage and operate yourself is known as a Self-host
 ## How I set up my Self-hosted Runner
 
 1. Created a new GitHub public repository that will be used to configure runner.
+
 ![SHR1](./images/SHR1.png)
-1. In the repository, I navigated to Settings → Actions → Runners → New self-hosted runner (as seen below) 
-![SHR1](./images/shr2.png)
-![SHR1](./images/shr4.png)
-2. On the new page, to add a new self-hosted runner, I selected Linux as my runner image with a x64 architecture.
-![SHR1](./images/shr5.png)
-3. I got the configuration instruction (as seen in the image below)for the Linux runner image I selected and ran them on my PC using the terminal. 
-![SHR1](./images/shr6.png)
+
+2. In the repository, I navigated to Settings → Actions → Runners → New self-hosted runner (as seen below) 
+   
+![SHR2](./images/shr2.png)
+![SHR3](./images/shr4.png)
+
+3. On the new page, to add a new self-hosted runner, I selected Linux as my runner image with a x64 architecture.
+![SHR4](./images/shr5.png)
+4. I got the configuration instruction (as seen in the image below)for the Linux runner image I selected and ran them on my PC using the terminal. 
+
+![SHR5](./images/shr6.png)
+
 By running the commands above, I successfully did the following:
    - Downloaded and extracted the self-hosted runner package to  `actions-runner` directory.
    - Configured and registered the runner to GitHub Actions using the repository URL and time-limited token. 
    - Connected my self-hosted runner application to GitHub Actions.
-4. Went back to the Runners page to confirm that the runner has been registered on GitHub.
+
+1. Went back to the Runners page to confirm that the runner has been registered on GitHub.
 
 ## Test Pipeline Using the Runner
 
@@ -30,7 +37,9 @@ To confirm that my GitHub Actions self-hosted runner is working and running work
 Next, I created a simple GitHub Actions workflow that runs on my self-hosted runner when triggered. The workflow contains a pipeline that authenticates to AWS using OIDC and syncs the content of the `images/` directory of this repository to an S3 bucket in AWS. 
 
 Finally, I committed and pushed changes to the remote repository on GitHub and confirmed that the workflow used my self-hosted runner (as seen below).
-![SHR1](./images/shr10.png)
+
+![SHR6](./images/shr10.png)
+
 ---
 
 ## Challenges faced and how I solved them
