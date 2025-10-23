@@ -1,0 +1,27 @@
+name: Sync content to AWS S3
+on:
+  push
+env:
+  BUCKET_NAME : "hosted-runner-images"
+  AWS_REGION : "us-east-1"
+
+permissions:
+  id-token: write
+  contents: read
+jobs:
+  S3PackageUpload:
+    runs-on: self-hosted
+    steps:
+      - name: Git clone the repository
+        uses: actions/checkout@v4
+
+      - name: Configure aws credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::126043786578:role/github-actions-s3sync-role
+          aws-region: ${{ env.AWS_REGION }}
+
+      # Upload a folder to AWS s3
+      - name:  Copy images to s3
+        run: |
+          aws s3 sync ./images s3://${{ env.BUCKET_NAME }}/
