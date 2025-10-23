@@ -28,7 +28,7 @@ By running the commands above, I successfully did the following:
    - Configured and registered the runner to GitHub Actions using the repository URL and time-limited token. 
    - Connected my self-hosted runner application to GitHub Actions.
 
-1. Went back to the Runners page to confirm that the runner has been registered on GitHub.
+5. Went back to the Runners page to confirm that the runner has been registered on GitHub.
 
 ## Test Pipeline Using the Runner
 
@@ -43,7 +43,7 @@ Finally, I committed and pushed changes to the remote repository on GitHub and c
 ---
 
 ## Challenges faced and how I solved them
-1. A notable challenge I faced was the fact that I had only used GitHub Actions with GitHub-hosted runners. The way I tackled this challenge was to firstly read extensively about self-hosted runners so as to understand how they work and best practices when using them, before actually configuring any. Once I understood how it works, the actually configuration process did not pose any significant challenge.
+A notable challenge I faced was the fact that I had only used GitHub Actions with GitHub-hosted runners. The way I tackled this challenge was to firstly read extensively about self-hosted runners so as to understand how they work and best practices when using them, before actually configuring any. Once I understood how it works, the actually configuration process did not pose any significant challenge.
 
 ---
 
